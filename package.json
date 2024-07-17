@@ -1,7 +1,7 @@
 {
-  "name": "SheetScribeJs",
+  "name": "sheetscribejs",
   "version": "0.1.0",
-  "description": "",
+  "description": "A small and simple library for turning objects into spreadsheets",
   "type": "module",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -10,19 +10,20 @@
   ],
   "scripts": {
     "start": "tsx src/index.ts",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Infroz",
+  "license": "MIT License",
   "dependencies": {
     "jszip": "^3.10.1",
-    "tsx": "^4.16.2",
-    "typescript": "^5.5.3",
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
     "@types/jszip": "^3.4.1",
-    "@types/node": "^20.14.11"
+    "@types/node": "^20.14.11",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
   }
 }

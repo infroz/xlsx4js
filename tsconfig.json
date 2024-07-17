@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "commonjs",
         "strict": true,
         "esModuleInterop": true,
@@ -10,4 +10,5 @@
         "outDir": "./dist",
     },
     "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
 }
