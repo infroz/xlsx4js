@@ -1,5 +1,5 @@
 {
-  "name": "sheetscribejs",
+  "name": "xlsx4js",
   "version": "0.1.0",
   "description": "A small and simple library for turning objects into spreadsheets",
   "type": "module",
