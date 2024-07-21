@@ -1,4 +1,4 @@
-import { Row, Worksheet, getCellType } from "../Worksheet";
+import Worksheet, { Row, getCellType } from "../Worksheet";
 
 export const getSheetOverride = (sheet: Worksheet) => `<Override PartName="/xl/worksheets/${sheet.getName()}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`;
 export const getSheetRels = (sheet: Worksheet) => `<Relationship Id="${sheet.getData().id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/${sheet.getName()}.xml"/>`;

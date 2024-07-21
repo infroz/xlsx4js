@@ -99,7 +99,7 @@ export type Row = { [key: string]: ValidDataType };
  * 
  * A workbook contains one or more worksheets
  */
-export class Worksheet {
+export default class Worksheet {
     #data: Sheet;
     constructor(data: Sheet) {
        this.#data = data; 

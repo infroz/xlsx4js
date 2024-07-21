@@ -1,9 +1,9 @@
 import JSZip from "jszip";
 import fs from "fs";
-import { Worksheet } from "./Worksheet";
 import { getSheetFile, getSheetOverride, getSheetRels, getSheets } from "./utils/workbookUtils";
+import Worksheet from "./Worksheet";
 
-export class Workbook {
+export default class Workbook {
   _sheets: Worksheet[] = [];
   addSheet(sheet: Worksheet) {
     this._sheets.push(new Worksheet({ 

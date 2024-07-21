@@ -1,2 +1,2 @@
-export * from './Workbook';
-export * from './Worksheet';
+export * as Workbook from './Workbook';
+export * as Worksheet from './Worksheet';

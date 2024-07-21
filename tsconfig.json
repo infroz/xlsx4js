@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "module": "commonjs",
+        "module": "CommonJS",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
@@ -9,6 +9,6 @@
         "declaration": true,
         "outDir": "./dist",
     },
-    "include": ["src/**/*"],
+    "include": ["package.json", "src/**/*"],
     "exclude": ["node_modules", "dist"]
 }
