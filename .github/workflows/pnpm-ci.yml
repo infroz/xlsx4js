@@ -1,4 +1,4 @@
-name: PNPM INSTALL & BUILD
+name: BUILD
 on:
   push:
 
