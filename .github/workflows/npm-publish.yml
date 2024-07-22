@@ -4,8 +4,10 @@
 name: NPM
 
 on:
-  release:
-    types: [created]
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
 
 jobs:
   build:
@@ -15,6 +17,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: ./dist
       - run: npm ci
       - run: npm test
 
@@ -27,6 +34,11 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: ./dist
       - run: npm ci
       - run: npm publish
         env:
