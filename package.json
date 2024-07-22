@@ -4,7 +4,7 @@
   "description": "A small and simple library for turning objects into spreadsheets",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/infroz/xlsx4js";
+    "url": "git+https://github.com/infroz/xlsx4js"
   },
   "bugs": {
     "url": "https://github.com/infroz/xlsx4js/issues"
