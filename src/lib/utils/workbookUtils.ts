@@ -1,4 +1,4 @@
-import Worksheet, { Row, getCellType } from "../Worksheet";
+import Worksheet, { Row, getCellType } from "../Worksheet.js";
 
 export const getSheetOverride = (sheet: Worksheet) => `<Override PartName="/xl/worksheets/${sheet.getName()}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`;
 export const getSheetRels = (sheet: Worksheet) => `<Relationship Id="${sheet.getData().id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/${sheet.getName()}.xml"/>`;
@@ -9,6 +9,8 @@ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const renderRow = (row: Row, index: number) => `<row r="${index + 1}">
         ${Object.entries(row).map(([_, value], i) => `<c r="${alphabet[i]}${index + 1}" t="${getCellType(value)}"><v>${value}</v></c>`).join("\n")}
     </row>`;
+
+const renderCell = (value: any, index: number) => `<c r="${alphabet[index]}1" t="${getCellType(value)}"><v>${value}</v></c>`;
 
 export const getSheetFile = (sheet: Worksheet) => `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
   <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">

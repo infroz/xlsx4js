@@ -1,8 +1,9 @@
 import JSZip from "jszip";
 import fs from "fs";
-import { getSheetFile, getSheetOverride, getSheetRels, getSheets } from "./utils/workbookUtils";
-import Worksheet from "./Worksheet";
+import { getSheetFile, getSheetOverride, getSheetRels, getSheets } from "./utils/workbookUtils.js";
+import Worksheet from "./Worksheet.js";
 
+/** @deprecated */
 export default class Workbook {
   _sheets: Worksheet[] = [];
   addSheet(sheet: Worksheet) {

@@ -1,2 +1,2 @@
-export * as Workbook from './Workbook';
-export * as Worksheet from './Worksheet';
+export * from "./Workbook.js";
+export * from "./Worksheet.js";

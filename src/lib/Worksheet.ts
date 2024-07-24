@@ -95,6 +95,7 @@ export const getCellType = (value: ValidDataType): CellType => {
 export type Row = { [key: string]: ValidDataType }; 
 
 /**
+ * @deprecated
  * class object for creating and managing worksheets
  * 
  * A workbook contains one or more worksheets
