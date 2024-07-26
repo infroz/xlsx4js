@@ -11,9 +11,6 @@ importers:
       jszip:
         specifier: ^3.10.1
         version: 3.10.1
-      xmlbuilder:
-        specifier: ^15.1.1
-        version: 15.1.1
     devDependencies:
       '@types/jszip':
         specifier: ^3.4.1
@@ -243,10 +240,6 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  xmlbuilder@15.1.1:
-    resolution: {integrity: sha512-yMqGBqtXyeN1e3TGYvgNgDVZ3j84W4cwkOXQswghol6APgZWaff9lnbvN7MHYJOiXsvGPXtjTYJEiC9J2wv9Eg==}
-    engines: {node: '>=8.0'}
-
 snapshots:
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -414,5 +407,3 @@ snapshots:
   undici-types@5.26.5: {}
 
   util-deprecate@1.0.2: {}
-
-  xmlbuilder@15.1.1: {}
