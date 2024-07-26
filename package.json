@@ -1,6 +1,6 @@
 {
   "name": "xlsx4js",
-  "version": "0.1.0",
+  "version": "0.1.1-1",
   "description": "A small and simple library for turning objects into spreadsheets",
   "repository": {
     "type": "git",
