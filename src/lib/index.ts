@@ -1,2 +1,2 @@
-export * as Workbook from './Workbook';
-export * as Worksheet from './Worksheet';
+export { createWorkbook } from "./createWorkbook.js";
+export { createWorksheet } from "./createWorksheet.js";
