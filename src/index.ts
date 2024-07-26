@@ -1,8 +1,5 @@
-import createWorkbook from "./lib/createWorkbook.js";
-import createWorksheet from "./lib/createWorksheet.js";
-
-export * from "./lib/createWorkbook.js";
-export * from "./lib/createWorksheet.js";
+export { createWorkbook, createWorksheet } from "./lib/index.js";
+import { createWorkbook, createWorksheet } from "./lib/index.js";
 
 const workbook = createWorkbook({ name: "My Workbook" });
 

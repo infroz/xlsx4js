@@ -1,2 +1,2 @@
-export * from "./Workbook.js";
-export * from "./Worksheet.js";
+export { createWorkbook } from "./createWorkbook.js";
+export { createWorksheet } from "./createWorksheet.js";
