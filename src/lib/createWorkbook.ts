@@ -56,7 +56,11 @@ export const createWorkbook = (options?: Options): Workbook => {
       }
       _sheets = [...sheets, ..._sheets];
     },
+<<<<<<< HEAD
     write: (options) => {
+=======
+    write: () => {
+>>>>>>> 87e52e2aa2d9082fb9b6220041a38ff0a1fafd39
       const zip = new JSZip();
 
       // [Content_Types].xml
