@@ -11,6 +11,7 @@ export type Worksheet = {
     addRow: (row: Row) => void;
     addRows: (rows: Row[]) => void;
     getName: () => string;
+    setName: (name: string) => void;
     getData: () => Row[];
     getId: () => string;
     setId: (id: string) => void;
@@ -18,19 +19,20 @@ export type Worksheet = {
 
 export const createWorksheet = (options?: Options): Worksheet => {
     // Worksheet state
-    const name = options?.name ?? "Sheet";
+    let name = options?.name ?? "Sheet";
     const rows = options?.rows ?? [];
     let id: string;
 
     return {
         rows: rows,
         addRow: (row) => {
-            console.log("Adding row to worksheet", row);
+            rows.push(row);
         },
         addRows: (rows) => {
-            console.log("Adding rows to worksheet", rows);
+            rows.push(...rows);
         },
         getName: () => name,
+        setName: (newName) => { name = newName; },
         getData: () => rows,
         getId: () => id,
         setId: (newId) => {
