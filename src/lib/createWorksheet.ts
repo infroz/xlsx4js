@@ -1,4 +1,4 @@
-import { Row } from "./Worksheet.js";
+import { Row } from "./types/index.js";
 
 type Options = {
     name: string;
