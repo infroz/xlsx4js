@@ -16,5 +16,5 @@ const sheeet = createWorksheet({ name: "My Sheet", rows: [{ someInteger: 123, so
 workbook.addSheet(sheeet);
 
 // Write the file, currently using node's fs
-workbook.write({ file: { filename: "MyWorkbook.xlsx" } });
+workbook.write({ file: { filename: "MyWorkbook" } });
 ```
