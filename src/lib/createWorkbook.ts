@@ -101,7 +101,6 @@ export const createWorkbook = (options?: Options): Workbook => {
       _sheets.forEach((sheet) => {
         zip.file(`xl/worksheets/${sheet.getName()}.xml`, getSheetFile(sheet));
       });
-
       // generate file
       zip
         .generateNodeStream({ type: "nodebuffer", streamFiles: true })
