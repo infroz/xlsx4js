@@ -19,6 +19,7 @@ export type Workbook = {
   write: (options?: {
     file?: {
       filename?: string;
+      extension?: "xlsx";
     };
   }) => void;
 };
@@ -56,7 +57,7 @@ export const createWorkbook = (options?: Options): Workbook => {
       }
       _sheets = [...sheets, ..._sheets];
     },
-    write: () => {
+    write: (options) => {
       const zip = new JSZip();
 
       // [Content_Types].xml
@@ -100,11 +101,10 @@ export const createWorkbook = (options?: Options): Workbook => {
       _sheets.forEach((sheet) => {
         zip.file(`xl/worksheets/${sheet.getName()}.xml`, getSheetFile(sheet));
       });
-
       // generate file
       zip
         .generateNodeStream({ type: "nodebuffer", streamFiles: true })
-        .pipe(fs.createWriteStream("workbook.xlsx"));
+        .pipe(fs.createWriteStream(`${options?.file?.filename ?? _name}.xlsx`));
     },
   };
 };
