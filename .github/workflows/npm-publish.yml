@@ -18,12 +18,7 @@ jobs:
         with:
           node-version: 16
       - name: Download build
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: ./dist
-      - run: npm ci
-      - run: npm test
+        uses: actions/download-artifact@v4
 
   publish-npm:
     needs: build
@@ -35,11 +30,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - name: Download build
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: ./dist
-      - run: npm ci
+        uses: actions/download-artifact@v4
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
