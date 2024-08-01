@@ -12,13 +12,12 @@ create an issue or fork the project to create pull-reqest.
 const workbook = createWorkbook({ name: "My Workbook" });
 
 // Create a sheet
-const sheeet = createWorksheet({
-  name: "My Sheet",
-  rows: [
+const sheeet = createWorksheet(
+  [
     { someInteger: 123, someString: "My Value1" },
     { someInteger: 456, someString: "My Second Value1" },
-  ],
-});
+  ]
+);
 
 // Add the sheet to your book
 workbook.addSheet(sheeet);
