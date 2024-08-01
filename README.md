@@ -23,5 +23,5 @@ const sheeet = createWorksheet(
 workbook.addSheet(sheeet);
 
 // Write the file, currently using node's fs
-workbook.write({ file: { filename: "MyWorkbook" } });
+workbook.write();
 ```
