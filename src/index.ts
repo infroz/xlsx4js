@@ -1,6 +1,5 @@
 import createWorkbook from "./lib/createWorkbook.js";
 import createWorksheet from "./lib/createWorksheet.js";
-import fs from "fs";
 
 export { createWorkbook, createWorksheet } from "./lib/index.js";
 
@@ -12,3 +11,5 @@ const sheet = createWorksheet([
 ]);
 
 book.addSheet(sheet);
+
+book.write();
