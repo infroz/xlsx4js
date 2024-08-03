@@ -48,7 +48,7 @@ export const createWorkbook = (options?: Options): Workbook => {
     addSheets: (sheets) => {
       if (
         sheets.some((sheet) =>
-          _sheets.some((s) => s.getName() === sheet.getName())
+          _sheets.some((s) => s.getName() === sheet.getName()),
         )
       ) {
         sheets.forEach((sheet) => {
@@ -87,7 +87,6 @@ export const createWorkbook = (options?: Options): Workbook => {
       <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
   </Relationships>`;
       zip.file("xl/_rels/workbook.xml.rels", workbookRels);
-      console.log("\nworkbookRels:\n", workbookRels);
 
       // xl/workbook.xml
       const workbook = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
