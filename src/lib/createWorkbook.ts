@@ -6,6 +6,7 @@ import {
   getSheetRels,
   getSheets,
 } from "./utils/workbookUtils.js";
+import fs from "fs";
 
 type Options = {
   name: string;
@@ -15,15 +16,7 @@ type Options = {
 export type Workbook = {
   addSheet: (sheet: any) => void;
   addSheets: (sheets: any[]) => void;
-  write: (options?: {
-    zipOptions: JSZip.JSZipGeneratorOptions;
-    file?: {
-      filename?: string;
-      extension?: "xlsx";
-    };
-  }) => JSZip.JSZipStreamHelper<
-    string | number[] | Uint8Array | ArrayBuffer | Blob | Buffer
-  >;
+  write: () => void;
 };
 
 const ensureUniqueSheetName = (sheets: Worksheet[], name: string) => {
@@ -59,7 +52,7 @@ export const createWorkbook = (options?: Options): Workbook => {
       }
       _sheets = [...sheets, ..._sheets];
     },
-    write: (options) => {
+    write: () => {
       const zip = new JSZip();
 
       // [Content_Types].xml
@@ -102,9 +95,11 @@ export const createWorkbook = (options?: Options): Workbook => {
       _sheets.forEach((sheet) => {
         zip.file(`xl/worksheets/${sheet.getName()}.xml`, getSheetFile(sheet));
       });
+
       // generate file
-      //
-      return zip.generateInternalStream(options?.zipOptions);
+      zip
+        .generateNodeStream({ type: "nodebuffer", streamFiles: true })
+        .pipe(fs.createWriteStream(`${_name}.xlsx`));
     },
   };
 };
