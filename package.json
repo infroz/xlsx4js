@@ -1,0 +1,35 @@
+{
+  "name": "xlsx4js",
+  "version": "0.1.1-7",
+  "description": "A small and simple library for turning objects into spreadsheets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infroz/xlsx4js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/infroz/xlsx4js/issues"
+  },
+  "type": "module",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Infroz",
+  "license": "MIT License",
+  "dependencies": {
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/jszip": "^3.4.1",
+    "@types/node": "^20.14.11",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}
